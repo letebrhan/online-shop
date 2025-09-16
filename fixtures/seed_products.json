@@ -1,0 +1,64 @@
+[
+{
+  "model": "shop.category",
+  "pk": 1,
+  "fields": {
+    "title": "T-Shirts",
+    "sub_category": null,
+    "is_sub": false,
+    "slug": "t-shirts"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "image": "",
+    "title": "Demo T-Shirt",
+    "description": "Demo T-Shirt – demo description",
+    "price": 19,
+    "date_created": "2025-09-16T20:57:45.871Z",
+    "slug": "demo-t-shirt"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "image": "",
+    "title": "Coffee Mug",
+    "description": "Coffee Mug – demo description",
+    "price": 12,
+    "date_created": "2025-09-16T20:57:45.967Z",
+    "slug": "coffee-mug"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "image": "",
+    "title": "Sticker Pack",
+    "description": "Sticker Pack – demo description",
+    "price": 3,
+    "date_created": "2025-09-16T20:57:45.973Z",
+    "slug": "sticker-pack"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "image": "",
+    "title": "Hoodie",
+    "description": "Hoodie – demo description",
+    "price": 39,
+    "date_created": "2025-09-16T20:57:45.977Z",
+    "slug": "hoodie"
+  }
+}
+]

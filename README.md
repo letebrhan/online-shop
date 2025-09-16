@@ -2,9 +2,7 @@
 ![Screenshot 2025-01-10 230656](https://github.com/user-attachments/assets/d1b57fdb-8a69-435e-965f-dc4b1d0bb86d)
 ![Screenshot 2025-01-10 225631](https://github.com/user-attachments/assets/7541f603-71d7-4707-8ba8-c79fe8aa7e80)
 
-
 ![Screenshot 2022-01-09 at 17-04-55 Django Online Shop](https://user-images.githubusercontent.com/71011395/148684469-79bfdb07-efa0-4dde-ad76-1f3277f833e6.png)
-
 
 This project is a simple yet fully functional online shop built with Django. It provides a custom dashboard for managing products and orders. Users can like products, add them to their cart, and proceed to checkout. Order processing is supported, but payments are handled using a fake payment system.
 
@@ -48,8 +46,8 @@ Follow these steps to set up and run the project on your local machine:
 
 1. **Clone or Download the Project**:
    ```bash
-   git clone https://github.com/saeidsaadatigero/online-shop
-   cd online-shop-django
+   git clone https://github.com/letebrhan/online-shop.git
+   cd online-shop
    ```
 
 2. **Set Up a Virtual Environment**:
@@ -96,11 +94,42 @@ Follow these steps to set up and run the project on your local machine:
 
 ---
 
+## Seeding the Database with Sample Data
+
+### Option A — Management command (recommended)
+```bash
+python manage.py seed_products
+```
+
+### Option B — Fixture
+```bash
+python manage.py loaddata fixtures/seed_products.json
+```
+
+### Reset & reload demo data
+```bash
+python manage.py flush --noinput
+python manage.py loaddata fixtures/seed_products.json
+```
+
+---
+
 ## Manager Dashboard Access
 
 To access the custom dashboard for managers, use the following credentials:
 - **Email**: `admin@admin.com`
 - **Password**: `admin`
+
+---
+
+## Troubleshooting
+
+- If `pip install -r requirements.txt` fails with crispy-bootstrap4 / crispy-forms pins, use a compatible set (e.g., Django 4.2.x, django-crispy-forms 2.x, crispy-bootstrap4 ≥ 2024.1) or lock crispy-bootstrap4 to an older release compatible with Django 4.0.
+
+- If `loaddata` fails with “no field named 'name'”, your models use different field names. Use the management command (Option A) or regenerate the fixture:
+  ```bash
+  python manage.py dumpdata shop.Category shop.Product --indent 2 > fixtures/seed_products.json
+  ```
 
 ---
 
